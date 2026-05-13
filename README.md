@@ -379,6 +379,7 @@ The Streamlit dashboard accepts these input parameters:
 
 # Project Structure 
 
+```mermaid
 %%{
   init: {
     'theme': 'base',
@@ -422,6 +423,7 @@ graph TD
     style STREAMLIT fill:#FFCDD2,stroke:#8B0000,stroke-width:2px,color:#000
     style CLIENT fill:#FFCDD2,stroke:#8B0000,stroke-width:2px,color:#000
     style NB fill:#E1BEE7,stroke:#4A148C,stroke-width:2px,color:#000
+```
 
 
 --------------------------------------------------------------------------------------------
