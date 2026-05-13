@@ -146,30 +146,30 @@ However, predicting how fast a drug will release is complex because multiple fac
   init: {
     'theme': 'base',
     'themeVariables': {
-      'fontSize': '18px',
+      'fontSize': '16px',
       'fontFamily': 'Arial, sans-serif'
     }
   }
 }%%
-flowchart LR
-    A[User opens<br/>Streamlit URL] -->|Step 1| B[Streamlit<br/>loads UI]
-    B -->|Step 2| C[User adjusts<br/>parameters]
-    C -->|Step 3| D[Streamlit calls<br/>FastAPI endpoint]
-    D -->|Step 4| E[FastAPI<br/>receives request]
-    E -->|Step 5| F[FastAPI loads<br/>.pkl model]
-    F -->|Step 6| G[Model makes<br/>prediction]
-    G -->|Step 7| H[Prediction returned<br/>to Streamlit]
-    H -->|Step 8| I[Streamlit shows<br/>result + chart]
+flowchart TD
+    A[User opens Streamlit URL] --> B[Streamlit loads UI]
+    B --> C[User adjusts parameters]
+    C --> D[Streamlit calls FastAPI endpoint]
+    D --> E[FastAPI receives request]
+    E --> F[FastAPI loads .pkl model]
+    F --> G[Model makes prediction]
+    G --> H[Prediction returned to Streamlit]
+    H --> I[Streamlit shows result + chart]
     
-    style A fill:#FF4B4B,stroke:#8B0000,stroke-width:3px,color:#fff,font-size:16px,font-weight:bold
-    style B fill:#FF6B6B,stroke:#8B0000,stroke-width:3px,color:#fff,font-size:16px,font-weight:bold
-    style C fill:#FF8C8C,stroke:#8B0000,stroke-width:3px,color:#fff,font-size:16px,font-weight:bold
-    style D fill:#009688,stroke:#004D40,stroke-width:3px,color:#fff,font-size:16px,font-weight:bold
-    style E fill:#26A69A,stroke:#004D40,stroke-width:3px,color:#fff,font-size:16px,font-weight:bold
-    style F fill:#F7931E,stroke:#E65100,stroke-width:3px,color:#fff,font-size:16px,font-weight:bold
-    style G fill:#FFB74D,stroke:#E65100,stroke-width:3px,color:#fff,font-size:16px,font-weight:bold
-    style H fill:#66BB6A,stroke:#2E7D32,stroke-width:3px,color:#fff,font-size:16px,font-weight:bold
-    style I fill:#4CAF50,stroke:#2E7D32,stroke-width:3px,color:#fff,font-size:16px,font-weight:bold
+    style A fill:#FF4B4B,stroke:#8B0000,stroke-width:3px,color:#fff,font-size:14px,font-weight:bold
+    style B fill:#FF6B6B,stroke:#8B0000,stroke-width:3px,color:#fff,font-size:14px,font-weight:bold
+    style C fill:#FF8C8C,stroke:#8B0000,stroke-width:3px,color:#fff,font-size:14px,font-weight:bold
+    style D fill:#009688,stroke:#004D40,stroke-width:3px,color:#fff,font-size:14px,font-weight:bold
+    style E fill:#26A69A,stroke:#004D40,stroke-width:3px,color:#fff,font-size:14px,font-weight:bold
+    style F fill:#F7931E,stroke:#E65100,stroke-width:3px,color:#fff,font-size:14px,font-weight:bold
+    style G fill:#FFB74D,stroke:#E65100,stroke-width:3px,color:#fff,font-size:14px,font-weight:bold
+    style H fill:#66BB6A,stroke:#2E7D32,stroke-width:3px,color:#fff,font-size:14px,font-weight:bold
+    style I fill:#4CAF50,stroke:#2E7D32,stroke-width:3px,color:#fff,font-size:14px,font-weight:bold
 ```
 
 --------------------------------------------------------------------------------------------
@@ -232,46 +232,42 @@ flowchart TD
   init: {
     'theme': 'base',
     'themeVariables': {
-      'fontSize': '16px',
+      'fontSize': '14px',
       'fontFamily': 'Arial, sans-serif'
     }
   }
 }%%
-graph TB
-    subgraph IDE ["USER"]
-        U[ End User]
-    end
+graph TD
+    U[👤 End User] -->|1. Opens browser| S
     
     subgraph FEND ["FRONTEND - Streamlit Cloud"]
-        S[ Streamlit UI]
-        A[ API Client]
+        S[📱 Streamlit UI]
+        A[🔗 API Client]
     end
     
     subgraph BEND ["BACKEND - Render.com"]
-        F[ FastAPI Server]
-        M[ Model Loader]
-        P[ .pkl Model File]
+        F[⚡ FastAPI Server]
+        M[📦 Model Loader]
+        P[🤖 .pkl Model]
     end
     
-    U -->|1. Opens browser| S
-    S -->|2. Inputs parameters| A
-    A -->|3. HTTP POST request| F
-    F -->|4. Loads model| M
-    M -->|5. Reads| P
-    P -->|6. Returns prediction| M
-    M -->|7. Prediction| F
+    S -->|2. Input parameters| A
+    A -->|3. HTTP POST| F
+    F -->|4. Load model| M
+    M -->|5. Read| P
+    P -->|6. Prediction| M
+    M -->|7. Return| F
     F -->|8. JSON response| A
-    A -->|9. Displays result| S
-    S -->|10. Shows chart| U
+    A -->|9. Display result| S
+    S -->|10. Show chart| U
     
-    style U fill:#9C27B0,stroke:#4A148C,stroke-width:3px,color:#fff,font-size:15px,font-weight:bold
+    style U fill:#9C27B0,stroke:#4A148C,stroke-width:3px,color:#fff,font-size:14px,font-weight:bold
     style S fill:#FF4B4B,stroke:#8B0000,stroke-width:3px,color:#fff,font-size:14px,font-weight:bold
-    style A fill:#FF6B6B,stroke:#8B0000,stroke-width:2px,color:#fff,font-size:14px
+    style A fill:#FF6B6B,stroke:#8B0000,stroke-width:2px,color:#fff,font-size:12px
     style F fill:#009688,stroke:#004D40,stroke-width:3px,color:#fff,font-size:14px,font-weight:bold
-    style M fill:#26A69A,stroke:#004D40,stroke-width:2px,color:#fff,font-size:14px
+    style M fill:#26A69A,stroke:#004D40,stroke-width:2px,color:#fff,font-size:12px
     style P fill:#F7931E,stroke:#E65100,stroke-width:3px,color:#fff,font-size:14px,font-weight:bold
     
-    style IDE fill:#E1BEE7,stroke:#4A148C,stroke-width:2px,color:#000
     style FEND fill:#FFCDD2,stroke:#8B0000,stroke-width:2px,color:#000
     style BEND fill:#B2DFDB,stroke:#004D40,stroke-width:2px,color:#000
 ```
@@ -363,13 +359,13 @@ The Streamlit dashboard accepts these input parameters:
       <td style="padding: 8px; border: 1px solid #ddd;"><b>Random Forest</b></td>
       <td style="padding: 8px; border: 1px solid #ddd;"><b>~0.89</b></td>
       <td style="padding: 8px; border: 1px solid #ddd;"><b>~7.2</b></td>
-      <td style="padding: 8px; border: 1px solid #ddd;"><b>✅ Selected</b></td>
+      <td style="padding: 8px; border: 1px solid #ddd;"><b>✅ Best after XGboost</b></td>
     </tr>
     <tr style="background-color: #ffffff;">
       <td style="padding: 8px; border: 1px solid #ddd;">XGBoost</td>
       <td style="padding: 8px; border: 1px solid #ddd;">~0.88</td>
       <td style="padding: 8px; border: 1px solid #ddd;">~7.5</td>
-      <td style="padding: 8px; border: 1px solid #ddd;">Alternative</td>
+      <td style="padding: 8px; border: 1px solid #ddd;">✅ Selected</td>
     </tr>
   </tbody>
 </table>
