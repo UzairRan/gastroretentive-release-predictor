@@ -379,8 +379,8 @@ The Streamlit dashboard accepts these input parameters:
 
 # Project Structure 
 
-
-**gastroretentive_ml_project/
+```text
+gastroretentive_ml_project/
 │
 ├── backend/
 │   ├── app.py
@@ -404,7 +404,8 @@ The Streamlit dashboard accepts these input parameters:
 ├── data/
 │   └── gastroretentive_data.csv
 │
-└── README.md**
+└── README.md
+```
 
 
 
