@@ -1,0 +1,23 @@
+artifact_path: file:///E:/gastroretentive_ml_project/gastroretentive_ml_project/mlruns/0/models/m-73fea4516ebf408686b18ada902a2555/artifacts
+flavors:
+  python_function:
+    env:
+      conda: conda.yaml
+      virtualenv: python_env.yaml
+    loader_module: mlflow.sklearn
+    model_path: model.pkl
+    predict_fn: predict
+    python_version: 3.10.10
+  sklearn:
+    code: null
+    pickled_model: model.pkl
+    serialization_format: cloudpickle
+    sklearn_version: 1.6.1
+    skops_trusted_types: null
+mlflow_version: 3.12.0
+model_id: m-73fea4516ebf408686b18ada902a2555
+model_size_bytes: 301762
+model_uuid: m-73fea4516ebf408686b18ada902a2555
+prompts: null
+run_id: 0af9ecf2a0be49b2ab780b4ed64f8740
+utc_time_created: '2026-05-12 21:23:12.300983'
