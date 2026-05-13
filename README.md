@@ -380,49 +380,31 @@ The Streamlit dashboard accepts these input parameters:
 # Project Structure 
 
 ```mermaid
-%%{
-  init: {
-    'theme': 'base',
-    'themeVariables': {
-      'fontSize': '15px',
-      'fontFamily': 'Arial, sans-serif'
-    }
-  }
-}%%
-graph TD
-    ROOT["📁 GASTRORETENTIVE_ML_PROJECT"]
-    
-    ROOT --> BACK["📁 backend/"]
-    ROOT --> FRONT["📁 frontend/"]
-    ROOT --> NOTE["📁 notebooks/"]
-    ROOT --> README["📄 README.md"]
-    
-    BACK --> APP["📄 app.py"]
-    BACK --> LOAD["📄 model_loader.py"]
-    BACK --> REQ1["📄 requirements.txt"]
-    BACK --> DOCKER["📄 Dockerfile"]
-    BACK --> MODELS["📁 models/"]
-    
-    MODELS --> PKL["📦 *.pkl model files"]
-    
-    FRONT --> STREAMLIT["📄 streamlit_app.py"]
-    FRONT --> CLIENT["📄 api_client.py"]
-    FRONT --> REQ2["📄 requirements.txt"]
-    
-    NOTE --> NB["📓 model_training.ipynb"]
-    
-    style ROOT fill:#2c3e50,stroke:#1a2632,stroke-width:3px,color:#fff,font-size:16px,font-weight:bold
-    style BACK fill:#009688,stroke:#004D40,stroke-width:3px,color:#fff,font-size:14px,font-weight:bold
-    style FRONT fill:#2196F3,stroke:#0D47A1,stroke-width:3px,color:#fff,font-size:14px,font-weight:bold
-    style NOTE fill:#FF9800,stroke:#BF360C,stroke-width:3px,color:#fff,font-size:14px,font-weight:bold
-    style README fill:#4CAF50,stroke:#2E7D32,stroke-width:2px,color:#fff,font-size:12px
-    style APP fill:#80CBC4,stroke:#004D40,stroke-width:2px,color:#000
-    style LOAD fill:#80CBC4,stroke:#004D40,stroke-width:2px,color:#000
-    style MODELS fill:#F7931E,stroke:#E65100,stroke-width:2px,color:#fff,font-weight:bold
-    style PKL fill:#FFB74D,stroke:#E65100,stroke-width:2px,color:#000
-    style STREAMLIT fill:#FFCDD2,stroke:#8B0000,stroke-width:2px,color:#000
-    style CLIENT fill:#FFCDD2,stroke:#8B0000,stroke-width:2px,color:#000
-    style NB fill:#E1BEE7,stroke:#4A148C,stroke-width:2px,color:#000
+gastroretentive_ml_project/
+│
+├── backend/
+│   ├── app.py
+│   ├── model_loader.py
+│   ├── requirements.txt
+│   ├── Dockerfile
+│   └── models/
+│       ├── gastro_release_best_model.pkl
+│       ├── label_encoder.pkl
+│       ├── feature_columns.pkl
+│       └── drug_type_mapping.pkl
+│
+├── frontend/
+│   ├── streamlit_app.py
+│   ├── api_client.py
+│   └── requirements.txt
+│
+├── notebooks/
+│   └── model_training.ipynb
+│
+├── data/
+│   └── gastroretentive_data.csv
+│
+└── README.md
 ```
 
 
