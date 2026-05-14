@@ -3,7 +3,8 @@ import streamlit as st
 
 # API endpoint - change this to your Render URL after deployment
 # Example: "https://your-app.onrender.com"
-API_BASE_URL = "http://localhost:8000"  # Local testing
+# API_BASE_URL = "http://localhost:8000"  # Local testing
+API_BASE_URL = "https://gastroretentive-release-predictor.onrender.com" 
 # API_BASE_URL = "https://your-app-name.onrender.com"  # After deployment on Render
 
 def get_api_health():
